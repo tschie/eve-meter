@@ -8,15 +8,9 @@ Y=(46 + #OffsetY#)
 [MeterSlotBtnMd8Damage]
 Meter=Image
 Group=Modules | SlotButtons | MdSlot8
-ImageName=#@#/shipui/slotdamage_base.png
+ImageName=#@#/shipui/slotdamage_[#md8HeatMeasure#].png
 X=0r
 Y=0r
-
-[MeasureSlotBtnMd8Heat]
-Measure=Calc
-IfCondition=([MeasureCoreTemp4Heat] >= 1)
-IfTrueAction=[!SetOption MeterSlotBtnMd8Damage ImageName "#@#/shipui/slotdamage_[MeasureCoreTemp4Heat].png"]
-IfFalseAction=[!SetOption MeterSlotBtnMd8Damage ImageName "#@#/shipui/slotdamage_base.png"]
 DynamicVariables=1
 
 [MeterSlotBtnMd8Overload]
@@ -25,6 +19,16 @@ Group=Modules | SlotButtons | MdSlot8
 ImageName=#@#/shipui/slotoverloadoff.png
 X=16r
 Y=6r
+
+[MeasureMd8Overload]
+Measure=Calc
+Formula=#md8OverloadMeasure#
+IfBelowValue=0
+IfBelowAction=[!SetOption MeterSlotBtnMd8Overload ImageName "#@#/shipui/slotoverloaddisabled.png"]
+IfEqualValue=0
+IfEqualAction=[!SetOption MeterSlotBtnMd8Overload ImageName "#@#/shipui/slotoverloadoff.png"]
+IfAboveValue=0
+IfAboveAction=[!SetOption MeterSlotBtnMd8Overload ImageName "#@#/shipui/slotoverloadon.png"]
 
 [MeterSlotBtnMd8Icon]
 Meter=Image
