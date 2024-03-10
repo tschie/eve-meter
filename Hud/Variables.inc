@@ -46,7 +46,7 @@ speedMinusClickAction=[!CommandMeasure "MeasureVolume" "ChangeVolume -10"]
 speedMinusDoubleClickAction=[!CommandMeasure "MeasureVolume" "SetVolume 0"]
 
 ; Compass
-compassDotsMeasure=MeasureTimeHoursPercent
+compassDotsMeasure=MeasureZero
 
 ; Utility Buttons
 autopilotMeasure=MeasureAirplaneMode
